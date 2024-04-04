@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1591.0",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "mysql": "^2.18.1",
+    "serverless-offline": "^13.3.3",
+    "util": "^0.12.5"
+  }
+}
