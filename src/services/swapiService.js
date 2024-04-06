@@ -22,7 +22,7 @@ exports.getPeople = async (id) => {
     console.log("[swapiService] getPeople " + id);
     try {
         const response = await axios.get('https://swapi.py4e.com/api/people/'+id+'/');
-        console.log('response axios =>', response);
+        // console.log('response axios =>', response);
 
         rec = response.data;
         const newJson = 

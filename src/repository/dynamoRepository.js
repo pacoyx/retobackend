@@ -1,8 +1,11 @@
-
+const config = require('./../../config.js');
 const AWS = require('aws-sdk');
+AWS.config.update(config.aws_remote_config);
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-exports.SP_I_DATA_USER_ITEM = async (query) => {
+
+exports.SP_I_DATA_USER_ITEM = async (query) => {  
+
     console.log("[dynamoRepository] Inicio registro usuario");
     const { id, name, email } = query;
 

@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "aws-sdk": "^2.1591.0",
     "axios": "^1.6.8",
@@ -6,5 +9,8 @@
     "mysql": "^2.18.1",
     "serverless-offline": "^13.3.3",
     "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
