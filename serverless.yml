@@ -12,13 +12,18 @@
 # Happy Coding!
 
 service: retobackend
-custom:
+custom: 
+  documentation:
+    version: '1'
+    title: 'My API reto backend'
+    description: 'This is my API para el reto backend de prueba'
+    models: {} 
   default_stage: dev
-  VM_DATABASE_URI: ''
-  VM_DATABASE_USER: 'user'  
-  VM_DATABASE_PASS: 'password'
+  VM_DATABASE_URI: '127.0.0.1'
+  VM_DATABASE_USER: 'cerebelum'  
+  VM_DATABASE_PASS: 'cerebelum'
   VM_DATABASE_PORT: 3306
-  VM_DATABASE_NAME: 'bd_test'
+  VM_DATABASE_NAME: 'dbcarlos'
 
   # default_stage: qa
   # VM_DATABASE_URI: ''
@@ -37,6 +42,7 @@ custom:
 frameworkVersion: "3"
 plugins:
   - serverless-offline
+  - serverless-openapi-documentation
 
 provider:
   name: aws
@@ -85,21 +91,36 @@ functions:
  create:
     handler: handler.create
     events:
-      - httpApi:
+      - http:
           path: /users
           method: post
+          documentation:
+            summary: Crea un usuario
+            description: Crea un usuario y genera un ID unico
+            requestBody:
+              description: No tiene request body
  read:
     handler: handler.read
     events:
-      - httpApi:
+      - http:
           path: /users
           method: get
+          documentation:
+            summary: obtiene un listado de usuarios
+            description: Obtiene el listado de todos los usuarios registrados
+            requestBody:
+              description: No tiene request body
  readSwapi:
     handler: handler.readSwapi
     events:
-      - httpApi:
+      - http:
           path: /people/{id}
           method: get
+          documentation:
+            summary: obtiene un jedi
+            description: Obtiene informacion de un jedi por ID
+            requestBody:
+              description: ID numerico entero identificador del jedi
  hello:
     handler: handler.hello
 #    The following are a few example events you can configure

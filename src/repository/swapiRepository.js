@@ -52,7 +52,7 @@ exports.SP_S_DATA_USER = function () {
             if (rows.length > 0) {
                 resolve({
                     estado: true,
-                    data: rows[0],
+                    data: rows,
                 });
             } else {
                 resolve({

@@ -1,7 +1,7 @@
 const {
     promisify
 } = require('util')
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -12,6 +12,8 @@ function attachAsyncMethods(pool) {
 }
 
 function initAuroraConn() {
+
+    console.log('process.env.DATABASE_URI==>',process.env.DATABASE_URI);
 
     var pool = mysql.createPool({
         connectionLimit: 10,

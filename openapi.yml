@@ -1,0 +1,26 @@
+openapi: 3.0.0
+components:
+  schemas: {}
+  securitySchemes: {}
+info:
+  title: My API reto backend
+  description: This is my API para el reto backend de prueba
+  version: '1'
+paths:
+  //users:
+    post:
+      operationId: create
+      summary: Crea un usuario
+      description: Crea un usuario y genera un ID unico
+      responses: {}
+    get:
+      operationId: read
+      summary: obtiene un listado de usuarios
+      description: Obtiene el listado de todos los usuarios registrados
+      responses: {}
+  '//people/{id}':
+    get:
+      operationId: readSwapi
+      summary: obtiene un jedi
+      description: Obtiene informacion de un jedi por ID
+      responses: {}
